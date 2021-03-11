@@ -8,10 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewHomeDetailController: UIViewController {
 
+//    @IBOutlet weak var txtUsername: UITextField!
+//    @IBOutlet weak var txtPassword: UITextField!
+//
+//    @IBAction func btnLogin(_ sender: UIButton) {
+//
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      //  txtPassword.isSecureTextEntry = true
+
+        
         // Do any additional setup after loading the view.
     }
 
