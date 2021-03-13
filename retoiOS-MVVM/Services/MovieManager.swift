@@ -9,8 +9,8 @@
 import Foundation
 
 
-public class VideoManager {
-
+public class MovieManager {
+    
     public func getMovies(path: String,
                                      completion: @escaping (_ results:[VideoListResult]?) -> Void) {
         let urlString = "\(BuildConfig.ServerName())/movie/\(path)?api_key=\(BuildConfig.ApiKey())&language=en-US&page=1"
@@ -58,5 +58,5 @@ public class VideoManager {
         }
         task.resume()
     }
-    
+
 }

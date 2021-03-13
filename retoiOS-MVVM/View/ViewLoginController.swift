@@ -28,6 +28,8 @@ class ViewLoginController: UIViewController {
         let loginManager = LoginManager()
         self.loginViewModel = LoginViewModel(loginManager: loginManager)
         bindData()
+        self.txtUsername.text = "macfri"
+        self.txtPassword.text = "r0n4ld123ZZ!!"
     }
 
     func bindData() {
