@@ -8,18 +8,40 @@
 
 import Foundation
 
-public protocol ThreeDSTestCaseMessageProtocol {
-    func onTestCasesError()
+public protocol ServiceProtocol {
+    func onError()
 //    func onTestCasesSuccess(tcMessage: TcMessage)
-    func onTestCasesDeleteError()
-    func onTestCasesDeleteSuccess()
+//    func onTestCasesDeleteError()
+    func onSuccess()
 }
 
 public class Service:NSObject {
     
-    var delegate:ThreeDSTestCaseMessageProtocol!
     
-    init(delegate: ThreeDSTestCaseMessageProtocol) {
+//    func loadSources(completion :@escaping ([Source]) -> ()) {
+//
+//        URLSession.shared.dataTask(with: sourcesURL) { data, _, _ in
+//
+//            if let data = data {
+//
+//                let json = try! JSONSerialization.jsonObject(with: data, options: [])
+//                let sourceDictionary = json as! JSONDictionary
+//                let dictionaries = sourceDictionary["sources"] as! [JSONDictionary]
+//
+//                let sources = dictionaries.flatMap(Source.init)
+//
+//                DispatchQueue.main.async {
+//                    completion(sources)
+//                }
+//            }
+//
+//        }.resume()
+//
+//    }
+    
+    var delegate:ServiceProtocol!
+    
+    init(delegate: ServiceProtocol) {
         self.delegate = delegate
     }
     
@@ -35,7 +57,8 @@ public class Service:NSObject {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let e = error {
                 print("getTestCases.e: \(e)")
-                self.delegate.onTestCasesError()
+                self.delegate.onError()
+//                self.delegate.onTestCasesError()
             } else {
                 if let httpStatus = response as? HTTPURLResponse{
                     
@@ -56,12 +79,16 @@ public class Service:NSObject {
                             //                            print("tcMessage.count: ", tcMessage)
                             
                           //  self.delegate.onTestCasesSuccess(tcMessage: tcMessage)
+                            self.delegate.onSuccess()
                         } catch let ex {
-                            self.delegate.onTestCasesError()
+                            self.delegate.onError()
+//                            self.delegate.onTestCasesError()
                             print("getTestCases.e: ", ex)
                         }
                     } else {
-                        self.delegate.onTestCasesError()
+                        self.delegate.onError()
+
+//                        self.delegate.onTestCasesError()
                         print("getTestCases.e")
                     }
                 }

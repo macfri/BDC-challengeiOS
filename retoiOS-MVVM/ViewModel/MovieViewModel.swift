@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  MovieViewModel.swift
 //  retoiOS-MVVM
 //
 //  Created by ro martinez on 3/11/21.
@@ -9,9 +9,7 @@
 import Foundation
 
 
-struct User: Codable {
-    
-    let adult:Bool
-    let backdrop_path:String
+// 2
+public class MovieViewModel {
     
 }

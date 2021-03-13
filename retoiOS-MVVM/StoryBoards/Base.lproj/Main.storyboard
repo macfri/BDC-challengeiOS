@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-LM-OR0">
-                                <rect key="frame" x="55" y="308" width="210" height="40"/>
+                                <rect key="frame" x="55" y="307" width="210" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0w6-60-VNh"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-2X-i0o">
-                                <rect key="frame" x="55" y="363" width="210" height="40"/>
+                                <rect key="frame" x="55" y="362" width="210" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bUw-PR-BNi"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn3-i8-DJr">
-                                <rect key="frame" x="55" y="418" width="210" height="40"/>
+                                <rect key="frame" x="55" y="417" width="210" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tV7-zJ-Pxr"/>
@@ -46,22 +46,36 @@
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p1B-MZ-wo8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIE-J4-W96">
+                                <rect key="frame" x="55" y="467" width="210" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="pEz-pY-7Rj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tn3-i8-DJr" firstAttribute="top" secondItem="9Cl-2X-i0o" secondAttribute="bottom" constant="15" id="0tT-hN-R2l"/>
                             <constraint firstItem="9Cl-2X-i0o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="5eJ-6b-DOw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tn3-i8-DJr" secondAttribute="bottom" constant="110" id="A96-68-cBt"/>
+                            <constraint firstItem="LIE-J4-W96" firstAttribute="top" secondItem="tn3-i8-DJr" secondAttribute="bottom" constant="10" id="AJr-E6-nAQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LIE-J4-W96" secondAttribute="bottom" constant="80" id="BdW-cJ-i49"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Cl-2X-i0o" secondAttribute="trailing" constant="55" id="Hzr-yK-BjE"/>
                             <constraint firstItem="9Cl-2X-i0o" firstAttribute="top" secondItem="Cbw-LM-OR0" secondAttribute="bottom" constant="15" id="Je6-8a-EqH"/>
                             <constraint firstItem="tn3-i8-DJr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="UXO-2T-8pC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cbw-LM-OR0" secondAttribute="trailing" constant="55" id="eMo-mP-SNg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LIE-J4-W96" secondAttribute="trailing" constant="55" id="fna-jJ-cG0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tn3-i8-DJr" secondAttribute="trailing" constant="55" id="sCt-CC-n2c"/>
+                            <constraint firstItem="LIE-J4-W96" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="vgD-HJ-BlI"/>
                             <constraint firstItem="Cbw-LM-OR0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="wD8-AD-sUf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btnLogin" destination="tn3-i8-DJr" id="9PF-yo-0AL"/>
+                        <outlet property="loginErrorDescriptionLabel" destination="LIE-J4-W96" id="qXr-uF-MAz"/>
                         <outlet property="txtPassword" destination="9Cl-2X-i0o" id="AjV-nw-Bh2"/>
                         <outlet property="txtUsername" destination="Cbw-LM-OR0" id="dCU-1L-p1P"/>
                     </connections>

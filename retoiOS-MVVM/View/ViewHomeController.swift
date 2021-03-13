@@ -13,6 +13,8 @@ class ViewHomeController: UIViewController, UICollectionViewDelegate {
     private let reuseIdentifier = "MovieCell"
     @IBOutlet weak var collectionView: UICollectionView!
 
+//    private let viewModel = WeatherViewModel()
+
     
 //    @IBOutlet weak var txtUsername: UITextField!
 //    @IBOutlet weak var txtPassword: UITextField!
