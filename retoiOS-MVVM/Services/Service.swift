@@ -10,37 +10,11 @@ import Foundation
 
 public protocol ServiceProtocol {
     func onError()
-//    func onTestCasesSuccess(tcMessage: TcMessage)
-//    func onTestCasesDeleteError()
     func onSuccess()
 }
 
 public class Service:NSObject {
-    
-    
-//    func loadSources(completion :@escaping ([Source]) -> ()) {
-//
-//        URLSession.shared.dataTask(with: sourcesURL) { data, _, _ in
-//
-//            if let data = data {
-//
-//                let json = try! JSONSerialization.jsonObject(with: data, options: [])
-//                let sourceDictionary = json as! JSONDictionary
-//                let dictionaries = sourceDictionary["sources"] as! [JSONDictionary]
-//
-//                let sources = dictionaries.flatMap(Source.init)
-//
-//                DispatchQueue.main.async {
-//                    completion(sources)
-//                }
-//            }
-//
-//        }.resume()
-//
-//    }
-    
     var delegate:ServiceProtocol!
-    
     init(delegate: ServiceProtocol) {
         self.delegate = delegate
     }
@@ -96,40 +70,4 @@ public class Service:NSObject {
         }
         task.resume()
     }
-    
-//    public func deleteTestCases() {
-//        let urlString = "\(ReferenceAppConfig.deleteTestsEndpoint())\(ReferenceAppConfig.apiKey())"
-//        var headers = [String: String]()
-//        headers["Content-Type"] = "application/json"
-//        headers["method"] = "DELETE"
-//        let url:NSURL = NSURL(string: urlString)!
-//        var request = URLRequest(url: url as URL)
-//        request.httpMethod = "DELETE"
-//        for header in headers {request.setValue(header.value, forHTTPHeaderField: header.key)}
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let e = error {
-//                print("getTestCases.e: \(e)")
-//                self.delegate.onTestCasesDeleteError()
-//            } else {
-//                if let httpStatus = response as? HTTPURLResponse{
-//                    if httpStatus.statusCode == 200 {
-//                        guard let data = data else { return }
-//                        do {
-//                            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-//                            print("getTestCasesDelete: \(String(describing: responseJSON)) ")
-//                            self.delegate.onTestCasesDeleteSuccess()
-//                        } catch let ex {
-//                            self.delegate.onTestCasesDeleteError()
-//                            print("getTestCases.e: ", ex)
-//                        }
-//                    } else {
-//                        self.delegate.onTestCasesDeleteError()
-//                        print("getTestCases.e")
-//                    }
-//                }
-//            }
-//        }
-//        task.resume()
-//    }
-    
 }

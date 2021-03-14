@@ -18,7 +18,7 @@ public struct VideoList: Codable {
 }
 
 public struct VideoListDates: Codable {
-    var maximum:Bool?
+    var maximum:String?
     var minimum:String?
 }
 

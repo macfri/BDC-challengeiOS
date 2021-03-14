@@ -7,7 +7,4 @@ struct BuildConfig {
     static func ServerName() -> String { return "https://api.themoviedb.org/3" }
     static func ImageUrl() -> String { return "https://image.tmdb.org/t/p/w500" }
 
-    
- //   srYya1ZlI97Au4jUYAktDe3avyA.jpg
-    
 }

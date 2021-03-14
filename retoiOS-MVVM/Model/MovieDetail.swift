@@ -12,12 +12,11 @@ import Foundation
 public struct VideoDetail: Codable {
     var adult:Bool?
     var backdrop_path:String?
-    var belongs_to_collection:String?
     var budget:Int?
     var genres:[VideoDetailGenres]?
     var homepage:String?
     var id:Int?
-    var imdb_id:Int?
+    var imdb_id:String?
     var original_language:String?
     var original_title:String?
     var overview:String?
@@ -56,6 +55,6 @@ public struct VideoDetailSpokenLanguages: Codable {
 }
 
 public struct VideoDetailGenres: Codable {
-    var id:String?
+    var id:Int?
     var name:String?
 }
