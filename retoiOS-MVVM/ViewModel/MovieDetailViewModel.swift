@@ -9,19 +9,19 @@
 import Foundation
 
 
-public class MovieViewModel {
+public class MovieDetailViewModel {
     
     // MARK: - Stored Properties
     private let movieManager: MovieManager
-    var items: Observable<[VideoListResult]?> = Observable(nil)
-    
+    var item: Observable<VideoDetail?> = Observable(nil)
+
     init(movieManager: MovieManager) {
         self.movieManager = movieManager
     }
     
-    func getItems(type:String) {
-        movieManager.getMovies(path: type) { ( videos ) in
-            self.items.value = videos
+    func getItem(id:Int) {
+        movieManager.getMovie(id: id) { ( video ) in
+            self.item.value = video
         }
     }
 }
