@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  MovieList.swift
 //  retoiOS-MVVM
 //
 //  Created by ro martinez on 3/11/21.

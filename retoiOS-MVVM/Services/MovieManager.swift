@@ -1,6 +1,6 @@
 //
 //  VideoManager.swift
-//  3DSecure
+//  RetoiOS
 //
 //  Created by Ronald Martinez on 6/18/19.
 //  Copyright Â© 2019 Ronald. All rights reserved.

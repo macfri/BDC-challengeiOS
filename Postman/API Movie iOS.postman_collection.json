@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "33b33ecc-5c94-4019-8762-422ed310b18f",
+		"name": "API Movie iOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/authentication/token/new",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/authentication/token/new?api_key=3ce7c621d2350bf13d2f250741a370eb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"authentication",
+						"token",
+						"new"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/authentication/token/validate_with_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"macfri\",\n  \"password\": \"r0n4ld123ZZ!!\",\n  \"request_token\": \"75570d8ad07923e90aa8bd06ce58dedda6122b98\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=3ce7c621d2350bf13d2f250741a370eb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"authentication",
+						"token",
+						"validate_with_login"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movie/detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/550?api_key=3ce7c621d2350bf13d2f250741a370eb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"550"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movie/popular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/popular?api_key=3ce7c621d2350bf13d2f250741a370eb&language=en-US&page=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"popular"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						},
+						{
+							"key": "language",
+							"value": "en-US"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movie/top_rated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/top_rated?api_key=3ce7c621d2350bf13d2f250741a370eb&language=en-US&page=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"top_rated"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						},
+						{
+							"key": "language",
+							"value": "en-US"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movie/upcoming",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/upcoming?api_key=3ce7c621d2350bf13d2f250741a370eb&language=en-US&page=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"upcoming"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						},
+						{
+							"key": "language",
+							"value": "en-US"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/movie/now_playing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.themoviedb.org/3/movie/now_playing?api_key=3ce7c621d2350bf13d2f250741a370eb&language=en-US&page=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"themoviedb",
+						"org"
+					],
+					"path": [
+						"3",
+						"movie",
+						"now_playing"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "3ce7c621d2350bf13d2f250741a370eb"
+						},
+						{
+							"key": "language",
+							"value": "en-US"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewLoginController.swift
 //  retoiOS-MVVM
 //
 //  Created by ro martinez on 3/11/21.
@@ -30,6 +30,12 @@ class ViewLoginController: UIViewController {
         bindData()
         self.txtUsername.text = "macfri"
         self.txtPassword.text = "r0n4ld123ZZ!!"
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "LoginPSD.jpg")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
     }
 
     func bindData() {
