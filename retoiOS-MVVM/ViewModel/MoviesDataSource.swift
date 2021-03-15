@@ -32,7 +32,8 @@ class MoviesDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: self.reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionMovieViewCell
+            withReuseIdentifier: self.reuseIdentifier, for: indexPath as IndexPath
+            ) as! MyCollectionMovieViewCell
         let row = self.items[indexPath.row]
         cell.title.text = row.title
         cell.backgroundColor = .black
@@ -45,7 +46,9 @@ class MoviesDataSource: NSObject, UICollectionViewDataSource {
         DispatchQueue.main.async {
             if row.poster_path != nil {
                 let urlImage = "\(BuildConfig.ImageUrl())/\(row.poster_path!)"
-                URLSession.shared.dataTask(with: NSURL(string: urlImage)! as URL, completionHandler: { (data, response, error) -> Void in
+                URLSession.shared.dataTask(
+                    with: NSURL(string: urlImage)! as URL, completionHandler: {
+                        (data, response, error) -> Void in
                        if error != nil {
                            print(error ?? "No Error")
                            return

@@ -16,14 +16,15 @@ class ViewHomeDetailController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var txtTitle: UILabel!
-    @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var txtCreatedBy: UILabel!
     @IBOutlet weak var imgHeader: UIImageView!
     @IBOutlet weak var imgLesson: UIImageView!
     @IBOutlet weak var imgNavLeft: UIImageView!
+    @IBOutlet weak var txtDescription: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         let movieManager = MovieManager()
         self.movieDetailViewModel = MovieDetailViewModel(movieManager: movieManager)
         self.movieDetailViewModel.getItem(id: self.paramId)
@@ -39,7 +40,9 @@ class ViewHomeDetailController: UIViewController {
                      self?.txtCreatedBy.text = movie?.tagline!
                      if movie?.backdrop_path != nil {
                          let urlImage = "\(BuildConfig.ImageUrl())/\(movie!.backdrop_path!)"
-                         URLSession.shared.dataTask(with: NSURL(string: urlImage)! as URL, completionHandler: { (data, response, error) -> Void in
+                         URLSession.shared.dataTask(with: NSURL(
+                            string: urlImage)! as URL, completionHandler: {
+                                (data, response, error) -> Void in
                                 if error != nil {
                                     print(error ?? "No Error")
                                     return

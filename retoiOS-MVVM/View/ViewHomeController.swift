@@ -22,8 +22,8 @@ class ViewHomeController: UIViewController, UICollectionViewDelegate {
     private var tabledata:[VideoListResult] = []
 
     // MARK: - Stored Properties
-    private var movieViewModel: MovieViewModel!
     private var dataSource : MoviesDataSource!
+    private var movieViewModel: MovieViewModel!
 
 
     override func viewDidLoad() {

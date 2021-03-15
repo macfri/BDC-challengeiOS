@@ -13,24 +13,19 @@ import UIKit
 class LoginViewModel  {
     
     // MARK: - Stored Properties
-    private let loginManager: LoginManager
-    
+    private let loginManager: LoginManager    
     private var credentials = Credentials() {
         didSet {
             username = credentials.username
             password = credentials.password
         }
     }
-    
+
     private var username = ""
     private var password = ""
 
     var success: Observable<Bool?> = Observable(false)
-    var errorMessage: Observable<String?> = Observable(nil)
     var credentialsInputErrorMessage: Observable<String> = Observable("")
-    var isUsernameTextFieldHighLighted: Observable<Bool> = Observable(false)
-    var isPasswordTextFieldHighLighted: Observable<Bool> = Observable(false)
-
     
     init(loginManager: LoginManager) {
         self.loginManager = loginManager
@@ -45,6 +40,9 @@ class LoginViewModel  {
         self.loginManager.loginWithCredentials(
         username: username, password: password) { [weak self] (success) in
             self?.success.value = success
+            DispatchQueue.main.async {
+                self?.credentialsInputErrorMessage.value = "Invalid username or password."
+            }
         }
     }
 
@@ -55,12 +53,10 @@ class LoginViewModel  {
         }
         if username.isEmpty {
             credentialsInputErrorMessage.value = "Username field is empty."
-            isUsernameTextFieldHighLighted.value = true
             return .Incorrect
         }
         if password.isEmpty {
             credentialsInputErrorMessage.value = "Password field is empty."
-            isPasswordTextFieldHighLighted.value = true
             return .Incorrect
         }
         return .Correct
